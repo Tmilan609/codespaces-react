@@ -13,7 +13,7 @@ import React from "react";
 
 import { useState } from 'react';
 
-const SearchInput = styled.div`
+const SearchInput = style.div`
     display: flex;
     align-items: center;
     border: 30px;
