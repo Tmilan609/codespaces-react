@@ -1,38 +1,43 @@
 import React from 'react';
+
 import AppsIcon from '@material-ui/icons/Apps';
-import AvatarIcon from '@material-ui/core/Avatar';
+import AvatarIcon from '@material-ui/core/Avatar'
+
 import Search from './Search';
 import styled from 'styled-components';
+
 const HomeContainer = styled.div`
     display: flex;
     flex-direction: column;
     height: 100vh;
-`;
-const HeaderContainer = styled.div`
+   ` ;
+
+    const HeaderContainer = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 20px 30px;
-    align-items: center;
-`;
-const Header = styled.div`
+    align-items: Center;
+    `;
+
+    const Header = styled.div`
     display: flex;
-    align-items: center;
+    align-items: Center;
     p{
-        margin-right: 20px;
-        font-size: 15px;
+        margin-right:20px;
+        font-size:15px;
     }
     .left-margin{
-        margin-left: 20px;
+        margin-left:20px
+    
     }
 `;
-const BodyContainer = styled.div`
-    flex: 1;
+    const BodyContainer = styled.div`
     display: flex;
     margin-top: 10%;
     flex-direction: column;
-    img {
-        object-fit: contain;
-        height: 100px;
+    img{
+        object-fit:Contain;
+        height:100px;
         margin-bottom: 5px;
     }
 `;
@@ -42,22 +47,24 @@ const Home = () => {
             <HeaderContainer>
                 <Header>
                     <p>About</p>
-                    <p>Store</p>
+                    <p>store</p>
                 </Header>
                 <Header>
                     <p>Gmail</p>
                     <p>Images</p>
-                    <AppsIcon className="left-margin"/>
-                    <AvatarIcon className="left-margin"/>
+                    <AppsIcon className = 'left-margin'/>
+                    <AvatarIcon className = 'left-margin'/>
                 </Header>
             </HeaderContainer>
             <BodyContainer>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/320px-Google_2015_logo.svg.png" alt="google-logo" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/320px-Google_2015_logo.svg.png" alt="google-logo" />
+            
             <div>
-                <Search />
+                     <Search />
             </div>
             </BodyContainer>
         </HomeContainer>
-    )
-}
-export default Home;
+            )
+ };
+
+            export default Home;
