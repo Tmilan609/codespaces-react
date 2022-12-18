@@ -1,3 +1,5 @@
+// eslint-disable-next-line
+
 import React from "react";
 import { Link } from "react-router-dom";
 import Search from './Search'
@@ -10,6 +12,8 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import styled from "styled-components";
 import { useStateValue } from "../SearchProvider";
 import useGoogle from "../useGoogle";
+
+
 const SearchPageHeader = styled.div`
 display: flex;
 position: sticky;
@@ -91,11 +95,13 @@ const SearchPageResultDesc = styled.p`
         const [ {term} ] = useStateValue();
         const { data } = useGoogle(term);
         console.log(data);
+
+        
         return (
             <div>
             <SearchPageHeader>
                 <Link to="/">
-                    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Google_2011_logo.png/640px-Google_2011_logo.png' />
+                    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Google_2011_logo.png/640px-Google_2011_logo.png'alt=""/>
                 </Link>
                 <div>
                     <Search hide />
@@ -132,21 +138,22 @@ const SearchPageResultDesc = styled.p`
         </div>
             </SearchPageHeader>
             <SearchPageResults>
-                <p>
-                    <div className="resultCount">
+                <p className="resultCount">
+                    About 21,80,00,000 results (1.32 seconds) for TWD
+                    </p>
+                    <div className="result">
                         <SearchPagelink href="">
-                            <img src="https://thewebdev.tech/static/ce59ef6831a6ff9cba3b957baece8d8c/a3e81/logo.webp" alt=""/>
+                            <img src="https://thewebdev.tech/static/ce59ef6831a6ff9cba3b957baece8d8c/a3e81/logo.webp" alt="" />
                             thewebdev.tech
                         </SearchPagelink>
                         <SearchPageResultsTitle href="">
                             <h2>The Web Dev</h2>
                         </SearchPageResultsTitle>
-                        <SearchPageResultDesc>Lorem, ipsum dolor sit amet consectrtur adipisicing elit. Impedit, suscipit</searchPageResultDesc>
-                    </div>
-                </p>
+                        <SearchPageResultDesc>Lorem, ipsum dolor sit amet consectrtur adipisicing elit. Impedit, suscipit</SearchPageResultDesc>
+                </div>
             </SearchPageResults>
         </div>
         )
-    };
+    }
     
     export default SearchPage;

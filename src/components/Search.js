@@ -8,7 +8,7 @@ import { useState } from "react";
 import React from "react";
 
 import styled from 'styled-components';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useStateValue } from "../SearchProvider";
 import {SET_SEARCH_TERM} from '../types.js';
 
@@ -59,7 +59,7 @@ const SearchButton = styled.div`
 
 const Search = ({ hide }) => {
     const [input, setInput] = useState("");
-    const history = useHistory();
+    const history = useNavigate();
     const [{}, dispatch] = useStateValue();
 
     const search = e => {

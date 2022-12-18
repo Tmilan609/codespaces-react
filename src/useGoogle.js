@@ -5,7 +5,7 @@ const useGoogle = term => {
 
     useEffect(() => {
         fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.REACT_APP_API_KEY}&CX=${process.env.REACT_APP_CONTECT_KEY}&q=${term}`)
-        .then((respone) => respone.json()).then((results) => {
+        .then((respone) => respone.json()).then((result) => {
             setData(result);
         }) 
         
@@ -15,4 +15,4 @@ const useGoogle = term => {
     return{ data };
 }
 
-export default useGoogle
+export default useGoogle;
