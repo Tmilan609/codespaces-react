@@ -125,34 +125,40 @@ const SearchPageResultDesc = styled.p`
                     <SearchPageOption>
                         <MoreVertIcon /><Link to="/all">More</Link>
                     </SearchPageOption>
-                </Options>
-                <Options right>
+                    </Options>
+                    <Options right>
                     <SearchPageOption>
                         <Link to="/settings">Settings</Link>
                     </SearchPageOption>
                     <SearchPageOption>
                         <Link to="/tools">Tools</Link>
                     </SearchPageOption>
-                </Options>
-            </SearchPageOptions>
+                    </Options>
+                    </SearchPageOptions>
         </div>
             </SearchPageHeader>
+            {term && (
             <SearchPageResults>
                 <p className="resultCount">
-                    About 21,80,00,000 results (1.32 seconds) for TWD
+                    About {data?.searchInformation.formattedTotaResults} results ({data?.searachInformation.formattedSearchTime}) for {term}
                     </p>
+                    {data?.items.map(item => (
                     <div className="result">
-                        <SearchPagelink href="">
-                            <img src="https://thewebdev.tech/static/ce59ef6831a6ff9cba3b957baece8d8c/a3e81/logo.webp" alt="" />
-                            thewebdev.tech
+                        <SearchPagelink href={item.link}>
+                           {item.pagemap?.cse_image?.length > 0 && item.pagemap?.cse_image[0]?.src && (
+                                <img src={item.pagemap?.cse_image[0]?.src} alt="" /> 
+                                )}
+                            {item.displayLink}
                         </SearchPagelink>
-                        <SearchPageResultsTitle href="">
-                            <h2>The Web Dev</h2>
+                        <SearchPageResultsTitle href="item.link">
+                            <h2>{item.title}</h2>
                         </SearchPageResultsTitle>
-                        <SearchPageResultDesc>Lorem, ipsum dolor sit amet consectrtur adipisicing elit. Impedit, suscipit</SearchPageResultDesc>
+                        <SearchPageResultDesc>{item.snippet}</SearchPageResultDesc>
                 </div>
+            ))}
             </SearchPageResults>
-        </div>
+            )}
+            </div>
         )
     }
     
