@@ -59,7 +59,7 @@ const SearchButton = styled.div`
 
 const Search = ({ hide }) => {
     const [input, setInput] = useState("");
-    const history = useNavigate();
+    const Navigate = useNavigate();
     const [{}, dispatch] = useStateValue();
 
     const search = e => {
@@ -68,7 +68,7 @@ const Search = ({ hide }) => {
             type: SET_SEARCH_TERM,
             term: input
         })
-        history.push("/search");
+        Navigate.push("/search");
     }
     
 
